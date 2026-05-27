@@ -4,22 +4,21 @@ int main(void)
 {
 	char arr[10] = {};
 	char *p = nullptr, *q = nullptr;
-	char x, word;
-	int xCount, wordCount=0;
+	char word;
+	int count, wordCount=0;
 
 	for(p=arr; p<arr+10; p++) {
 		scanf(" %c", p);
 	}
 
 	for(p=arr; p<arr+10; p++) {
-		x = *p;
-		xCount = 0;
+		count = 0;
 		for(q=arr; q<arr+10; q++) {
-			if(x == *q) xCount++;
+			if(*p == *q) count++;
 		}
-		if(xCount>wordCount) {
-			word = x;
-			wordCount = xCount;
+		if(count>wordCount) {
+			word = *p;
+			wordCount = count;
 		}
 	}
 	printf("%c %d", word, wordCount);
